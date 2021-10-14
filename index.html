@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal ledger</title>
+    <!--stylesheet-->
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+<!--stylingsheet-->
+<style>
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ececec;
+       
+    }
+    section{
+        height: 1300px;
+        width: 880px;
+        border: 1px solid #ccc;
+        overflow-y: hidden;
+       
+    
+    }
+    header{
+        padding: 5px 5px 100px 5px;
+        border-radius: 20px;
+        box-shadow: antiquewhite;
+        padding-bottom: 0px;
+        display: flex;
+        
+    }
+    .menu{
+        display: inline-block;
+    }
+    main{
+        background-color: #F7F7F7;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        min-height: 100px;
+        padding-top: 10px;
+}
+.buttons{
+    display: flex;
+   padding: 10px;
+   padding-bottom: 0px;
+   padding-top: 0px;
+}
+.button{
+    flex:1;
+    height:190px;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.guidelines{
+    padding: 15px;
+    padding-top: 30px;
+    
+}
+.guideline{
+    display: flex;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.h2{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3E3049;
+    margin-bottom: 20px;
+}
+.title{
+   font-weight: bold;
+}
+.guide{
+  color: #665E77;
+}
+.logo{
+    padding-top: 30px;
+    padding-left: 10px;
+    justify-content: center; 
+    align-items: center;   
+    
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+ padding-top:15px;
+  padding-left: 50px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color:#F7F7F7 ;
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+
+
+    </style>
+<script>
+  function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</head>
+<body>
+    
+    
+    <section>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        <!--imageogledger-->
+      <header >
+          <img  src="online.jpg" alt="header" width="100%" height="20%">
+         </header>
+      <main>
+          <!--row1-->
+          <div class="buttons">
+              <div class="button">
+                  <img src="pizza.png" style="height: auto;" alt="food" width="80%">
+                  <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn"><p style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; ">Food <span style="position: center;">0.00&#8377;</span></p></button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#home">Create</a>
+                      <a href="#about">View</a>
+                      
+                    </div>
+                  </div>
+                  
+              </div>
+              <div class="button">
+                <img src="graduation_cap.png" alt="Education" width="100%">
+                <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn"><p style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; ">Education <span style="position: center;">0.00&#8377;</span></p></button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Create</a>
+                    <a href="#about">View</a>
+                    
+                  </div>
+                </div>
+            </div>
+            <div class="button">
+                <img src="fuel.png" alt="Euel" width="100%">
+                <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn"><p style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; ">Fuel <span style="position: center;">0.00&#8377;</span></p></button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Create</a>
+                    <a href="#about">View</a>
+                    
+                  </div>
+                </div>
+                
+            </div>
+          </div>  
+          <!--row2-->
+          <div class="buttons">
+            <div class="button">
+                <img src="firstaid.png"class="center" style="height: auto; align-items: center;" alt="health" width="100%">
+                
+                <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn"><p style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; ">Health <span style="position: center;">0.00&#8377;</span></p></button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Create</a>
+                    <a href="#about">View</a>
+                    
+                  </div>
+                </div>
+                
+
+            </div>
+            <div class="button">
+              <img src="shopping.jpg" alt="Education" width="90%">
+              <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn"><p style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; "> Grocery <span style="position: center;">0.00&#8377;</span></p></button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#home">Create</a>
+                  <a href="#about">View</a>
+                  
+                </div>
+              </div>
+          </div>
+          <div class="button">
+              <img src="travel.png" alt="Fuel" width="100%">
+              <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn"><p style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; ">Travel <span style="position: center;">0.00&#8377;</span></p></button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#home">Create</a>
+                  <a href="#about">View</a>
+                  
+                </div>
+              </div>
+              
+          </div>
+        </div>  
+        <div class="guidelines">
+         <h2>Guidelines</h2>
+         <div class="guideline">
+             <div class="logo">
+               <img src="file.png" alt="create" width="35%"> 
+             </div>
+             <div class="info">
+                 <div class="title">
+                     How to create ledger?
+                 </div>
+                 <div class="guide">
+                     Click any of the above tab as per your requirement then select from dropdown options create and create your ledger. 
+                 </div>
+                 <div class="imagecredits">
+                    <div>logo credits : Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                    <div>images credits : <a href="https://pixabay.com/">pixabay</a></div>
+                 </div>
+                 
+                 
+             </div>
+             
+         </div>
+        </div>
+        <div class="guidelines">
+           
+            <div class="guideline">
+                <div class="logo">
+                  <img src="search.png" alt="create" width="30%"> 
+                </div>
+                <div class="info">
+                    <div class="title">
+                        How to view ledger?
+                    </div>
+                    <div class="guide">
+                        Click any of the above tab as per your requirement then select from dropdown options view and check your spend analysis. 
+                    </div>
+                    <div class="imagecredits">
+                       <div>logo credits : Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                       <div>images credits : <a href="https://pixabay.com/">pixabay</a></div>
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+           </div>
+        </main>
+    </section>
+</body>
+</html>
